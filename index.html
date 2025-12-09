@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Discord Shop BD</title>
+
+<!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">MyShop</div>
+    <ul class="nav-links">
+      <li><button class="category-btn active" data-category="all"><i class="fa-solid fa-list"></i> All</button></li>
+      <li><button class="category-btn" data-category="electronics"><i class="fa-solid fa-mobile-screen-button"></i> Electronics</button></li>
+      <li><button class="category-btn" data-category="clothes"><i class="fa-solid fa-shirt"></i> Clothes</button></li>
+      <li><button class="category-btn" data-category="books"><i class="fa-solid fa-book"></i> Books</button></li>
+      <li><button id="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Cart (<span id="cart-count">0</span>)</button></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <aside class="sidebar">
+    <h3>Categories</h3>
+    <ul>
+      <li><button class="category-btn active" data-category="all"><i class="fa-solid fa-list"></i> All</button></li>
+      <li><button class="category-btn" data-category="electronics"><i class="fa-solid fa-mobile-screen-button"></i> Electronics</button></li>
+      <li><button class="category-btn" data-category="clothes"><i class="fa-solid fa-shirt"></i> Clothes</button></li>
+      <li><button class="category-btn" data-category="books"><i class="fa-solid fa-book"></i> Books</button></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section id="product-list" class="product-list"></section>
+
+    <section id="cart-section" class="cart-section hidden">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <button id="checkout-btn">Confirm Order <i class="fa-solid fa-check"></i></button>
+    </section>
+
+    <section id="order-section" class="order-section hidden">
+      <h2>Order Confirmation</h2>
+      <form id="order-form">
+        <label>
+          Name:
+          <input type="text" id="name" required />
+        </label>
+        <label>
+          WhatsApp Number:
+          <input type="tel" id="whatsapp" required placeholder="+8801XXXXXXXXX" />
+        </label>
+        <label>
+          Discord Username:
+          <input type="text" id="discord" required placeholder="User#1234" />
+        </label>
+        <div>
+          <h3>Order Summary:</h3>
+          <ul id="order-summary"></ul>
+        </div>
+        <button type="submit">Create Ticket & Send Order <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </section>
+
+    <section id="thankyou-section" class="thankyou-section hidden">
+      <h2><i class="fa-solid fa-thumbs-up"></i> Thank you for your order!</h2>
+      <p>Your order ticket has been created.</p>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
